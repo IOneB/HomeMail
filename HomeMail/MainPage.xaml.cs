@@ -1,3 +1,4 @@
+using HomeMail.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,47 +12,42 @@ namespace HomeMail
 {
     public partial class MainPage : ContentPage
     {
+        private readonly Repository _repository;
+        private readonly SendMail _mailService;
+
         public MainPage()
         {
             InitializeComponent();
+
+            _repository = new Repository();
+            _mailService = new SendMail();
         }
 
         async void btnSend_Clicked(object sender, System.EventArgs e)
         {
             var result = await DisplayAlert("Подтвердить действие", "Отправить сообщения?", "Да", "Нет");
+            var addresses = _repository.GetAll();
+
             if (result)
             {
-                await SendEmail(to: "barabanovivan@bk.ru");
-                await SendEmail(to: "barabanovivan@bk.ru");
-                await SendEmail(to: "barabanovivan@bk.ru");
+                foreach (var address in addresses)
+                {
+                    try
+                    {
+                        _mailService.Send(address);
+                    }
+                    catch (Exception ex)
+                    {
+                        await DisplayAlert($"Отправка по адресу {address} провалена", ex.Message, "OK");
+                    }
+                }
             }
             await DisplayAlert("Действие выполнено", "Письма отправлены", "Ок");
         }
 
-        private async Task SendEmail(string to)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.yandex.ru");
-
-                mail.From = new MailAddress("ivan.barabanov@simbirsoft.com");
-                mail.To.Add(to);
-                mail.Subject = "Работа из дома";
-                mail.Body = "Работа из дома";
-
-                SmtpServer.Port = 587;
-                SmtpServer.Host = "smtp.yandex.ru";
-                SmtpServer.EnableSsl = true;
-                SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("ivan.barabanov@simbirsoft.com", "h6E4KcT32!");
-
-                SmtpServer.Send(mail);
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Failed", ex.Message, "OK");
-            }
+            await Navigation.PushAsync(new Addresses());
         }
     }
 }

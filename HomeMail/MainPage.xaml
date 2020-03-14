@@ -7,8 +7,10 @@
              x:Class="HomeMail.MainPage">
 
     <StackLayout BackgroundColor="#30947F">
+        <StackLayout HeightRequest="150">
+            <Button HeightRequest="40" Margin="10" Text="Адреса" Clicked="Button_Clicked" HorizontalOptions="EndAndExpand"></Button>
+        </StackLayout>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
-            <Image HeightRequest="150"></Image>
             <Label Text="Email with SMTP" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center" TextColor="#82EDCD" TextType="Text" />
             <Button FontSize="25" x:Name="btnSend" Margin="0, 40, 0, 0" HeightRequest="180" WidthRequest="180" Text="Сегодня работаю из дома" Clicked="btnSend_Clicked" />
         </StackLayout>

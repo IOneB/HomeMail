@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HomeMail.Addresses">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <Editor WidthRequest="150" x:Name="input" />
+                <Button Text="Добавить" x:Name="AddButton" Clicked="AddButton_Clicked"/>
+            </StackLayout>
+            <ListView x:Name="EmailsListView" ItemsSource="{Binding Path=Source}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Margin="10" Text="{Binding}" FontSize="Large"/>
+                                <Button HorizontalOptions="EndAndExpand" Margin="0,0,10,0" Text="Удалить" Clicked="RemoveButton_Clicked"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
