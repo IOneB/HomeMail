@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeMail.Android", "HomeMail.Android\HomeMail.Android.csproj", "{7C0018A8-E0C5-44BA-9B9A-AF009E473162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeMail", "HomeMail\HomeMail.csproj", "{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C0018A8-E0C5-44BA-9B9A-AF009E473162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0018A8-E0C5-44BA-9B9A-AF009E473162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0018A8-E0C5-44BA-9B9A-AF009E473162}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7C0018A8-E0C5-44BA-9B9A-AF009E473162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0018A8-E0C5-44BA-9B9A-AF009E473162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0018A8-E0C5-44BA-9B9A-AF009E473162}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF56E5C2-F247-4BF4-95B9-D6E80CB8D755}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6364BFD0-EBD6-4549-8BE7-A0ECF749C193}
+	EndGlobalSection
+EndGlobal
